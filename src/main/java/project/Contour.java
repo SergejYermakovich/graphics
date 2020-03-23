@@ -5,14 +5,6 @@ import java.awt.*;
 
 public class Contour {
 
-//    public static void setContour(Image image) {
-//        for (int col = 1; col < image.width - 1; col++) {
-//            for (int row = 1; row < image.height - 1; row++) {
-//                int newF = Math.abs(5 * getS(col, row, image) - 3 * getT(col, row, image));
-//            }
-//        }
-//    }
-
     private static int getS(int x, int y, Image image) {
         int s = 0;
         s += image.getBrightness(x - 1, y + 1)
@@ -45,19 +37,8 @@ public class Contour {
         return fArray;
     }
 
-//    public static int[][] calibrate(int[][] array) {
-//        int[][] calibratedArray = new int[array.length][array[0].length];
-//        for (int i = 0; i < array.length; i++) {
-//            for (int j = 0; j < array[0].length; j++) {
-//                calibratedArray[i][j] = (array[i][j] + 255) / 2;
-//            }
-//        }
-//        return calibratedArray;
-//    }
-
     public static void setContour(Image picture, int border) {
         int[][] nonCalibratedArray = getFMatrix(picture);
-       // int[][] calibratedArray = calibrate(nonCalibratedArray);
         for (int col = 0; col < nonCalibratedArray.length; col++) {
             for (int row = 0; row < nonCalibratedArray[0].length; row++) {
                 if (nonCalibratedArray[col][row] >= border) {
