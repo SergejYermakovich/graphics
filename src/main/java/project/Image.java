@@ -91,7 +91,6 @@ public class Image {
         int red;
         int blue;
         int green;
-
         for (int col = 0; col < picture.width; col++) {
             for (int row = 0; row < picture.height; row++) {
                 if ((int) (Math.random() * 100) < noise) {

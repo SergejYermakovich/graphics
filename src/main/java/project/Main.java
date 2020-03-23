@@ -17,7 +17,7 @@ public class Main {
         Filter.filter(image, 22);//производим фильтрацию изображения , 2 параметр это порог
         ImageIO.write(image.getBufferedImage(), "bmp", new File("src/main/resources/AFTER_FILTER.bmp"));//сохраняем отфильтрованное изображение
 
-        Contour.setContour(image);
+        Contour.setContour(image ,200);
         ImageIO.write(image.getBufferedImage(), "bmp", new File("src/main/resources/CONTOUR.bmp"));//сохраняем отфильтрованное изображение
 
         Image result =new Image(pathToFile);
