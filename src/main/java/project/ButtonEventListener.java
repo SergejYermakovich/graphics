@@ -13,7 +13,16 @@ public class ButtonEventListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         JButton button = (JButton) actionEvent.getSource();
-        if (button.getText().equals("open image with noise")) {
+        if (button.getText().equals("open original")) {
+            File file = new File("src/main/resources/image.bmp");
+            try {
+                BufferedImage image = ImageIO.read(file);
+                JOptionPane.showMessageDialog(null, "header:" + image.getProperty("header"));
+                Desktop.getDesktop().open(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else if (button.getText().equals("open image with noise")) {
             File file = new File("src/main/resources/AFTER_NOISE.bmp");
             try {
                 BufferedImage image = ImageIO.read(file);

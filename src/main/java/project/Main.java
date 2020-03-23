@@ -25,7 +25,7 @@ public class Main {
         ImageIO.write(result.getBufferedImage(), "bmp", new File("src/main/resources/TRANSFORM.bmp"));//сохраняем преобразованное изображение
 
 
-        StartMenuGUI startMenuGUI = new StartMenuGUI("");
+        StartMenuGUI startMenuGUI = new StartMenuGUI("MENU");
         startMenuGUI.setSize(640, 480);
         startMenuGUI.setVisible(true);
     }
