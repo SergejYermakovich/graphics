@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Transformation {
 
-    public static void overlayImageCopy(Image result, Image picture, int x, int y, int picx1, int picy1, int picx2, int picy2) {
+    public static Image overlayImageCopy(Image result, Image picture, int x, int y, int picx1, int picy1, int picx2, int picy2) {
         for (int i = 0; i < result.width; i++) {
             for (int j = 0; j < result.height; j++) {
                 Color qrt = result.get(i, j);
@@ -25,6 +25,7 @@ public class Transformation {
                 result.set(j + y, i + x, qwe);
             }
         }
+        return result;
     }
 
 

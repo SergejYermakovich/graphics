@@ -20,12 +20,11 @@ public class Main {
         ImageIO.write(image.getBufferedImage(), "bmp", new File("src/main/resources/CONTOUR.bmp"));//сохраняем отфильтрованное изображение
 
 
-        Image img =  new Image (pathToFile);
-        Image img1 = new Image(pathToFile);
-        Image img3 =  new Image(img.getWidth(),img.getHeight());
-        Transformation.overlayImageCopy(img3,img1,700,1800,0,0,460,300);
-       // Image transformImage = Transformation.overlayImageCopy(pathToFile, image, 700, 1800, 0, 0, 460, 300);
-        ImageIO.write(img3.getBufferedImage(), "bmp", new File("src/main/resources/TRANSFORM.bmp"));//сохраняем преобразованное изображение
+        Image image1 = new Image(pathToFile);
+        Image image2 = new Image(pathToFile);
+
+        Image result = Transformation.overlayImageCopy(image1, image2, 700, 1800, 0, 0, 460, 300);
+        ImageIO.write(result.getBufferedImage(), "bmp", new File("src/main/resources/TRANSFORM.bmp"));//сохраняем преобразованное изображение
 
     }
 }
